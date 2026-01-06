@@ -1,5 +1,5 @@
-# kubernets-complex-topic
-ResourceQouta & Limitranges
+
+# ResourceQouta & Limitranges
 
 1. LimitRange usage and its explaination
 
@@ -7,17 +7,15 @@ ResourceQouta & Limitranges
 
 This is the resource request automatically applied when a user does not specify resources.requests.
 
-It affects scheduling.
-
-Kubernetes uses requests to decide which node a Pod can fit on.
+It affects scheduling.Kubernetes uses requests to decide which node a Pod can fit on.
 
 2️⃣ default
 
 This is the resource limit automatically applied when a user does not specify resources.limits.
-
 Limits affect maximum allowed usage of a container.
-defaultRequest = what pod asks for (scheduling baseline)
 
+
+defaultRequest = what pod asks for (scheduling baseline)
 default = maximum it can use (runtime cap)
 
 LimitRange supports these type values:
@@ -29,7 +27,8 @@ Pod – Applies limits to the total of all containers in a Pod
 PersistentVolumeClaim – Sets min/max storage request size for PVCs
 
 
-3. Use of the resource Qouta at the namespace level so we can isolate the usage among multiple namespace users among shared cluster
+3. Use of the resource Qouta at the namespace level so we can isolate the usage among multiple namespace users among shared cluster, it will help for the resouce CPU & RAM  / storage capacity and object counts across the namespace.
+   
    
 
 
