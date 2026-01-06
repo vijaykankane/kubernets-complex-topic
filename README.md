@@ -1,5 +1,5 @@
 # kubernets-complex-topic
-kubernets-complex-topic
+ResourceQouta & Limitranges
 
 1. LimitRange usage and its explaination
 
@@ -19,7 +19,15 @@ Limits affect maximum allowed usage of a container.
 defaultRequest = what pod asks for (scheduling baseline)
 
 default = maximum it can use (runtime cap)
-   
+
+LimitRange supports these type values:
+
+Container – Applies limits/requests to each container (most common)
+
+Pod – Applies limits to the total of all containers in a Pod
+
+PersistentVolumeClaim – Sets min/max storage request size for PVCs
+
 
 3. Use of the resource Qouta at the namespace level so we can isolate the usage among multiple namespace users among shared cluster
    

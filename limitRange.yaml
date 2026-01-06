@@ -2,18 +2,19 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: default-limits
+  namespace: app-ns # Specify the namespace where the LimitRange will be applied
 spec:
   limits:
-    - type: Container
+    - type: Container # Define limits for individual containers
       max:
-        cpu: "2"
-        memory: "2Gi"
+        cpu: "2" # Maximum CPU limit
+        memory: "2Gi" # Maximum memory limit
       min:
-        cpu: "100m"
-        memory: "128Mi"
+        cpu: "100m" # Minimum CPU limit
+        memory: "128Mi" # Minimum memory limit
       default:
-        cpu: "500m"
-        memory: "512Mi"
+        cpu: "500m" # Default CPU limit if not specified
+        memory: "512Mi" # Default memory limit if not specified
       defaultRequest:
-        cpu: "200m"
-        memory: "256Mi"
+        cpu: "200m" # Default CPU request if not specified
+        memory: "256Mi" # Default memory request if not specified
